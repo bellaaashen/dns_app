@@ -1,0 +1,11 @@
+# Dockerfile_AS
+FROM python:3.9
+
+WORKDIR /app
+
+# No dependencies required, hence no requirements.txt copy and install step
+COPY AS.py ./
+
+EXPOSE 53533/udp
+
+CMD [ "python", "./AS.py" ]

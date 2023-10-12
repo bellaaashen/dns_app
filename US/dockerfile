@@ -1,0 +1,18 @@
+# Dockerfile_US
+FROM python:3.9
+
+# Setting up the working directory
+WORKDIR /app
+
+# Installing required packages
+COPY requirements.txt ./
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copying the python script
+COPY US.py ./
+
+# Exposing the port that US.py will run on
+EXPOSE 8080
+
+# Command to run the application
+CMD [ "python", "./US.py" ]
